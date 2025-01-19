@@ -28,16 +28,13 @@ router.post('/ai', (req, res) => {
     const result = await model.generateContent(prompt);
     let respostaTexto = result.response.text().trim();
 
-    // Remover qualquer texto antes do primeiro '{' e depois do último '}'
-    respostaTexto = respostaTexto.replace(/^[^\{]*/, '').trim(); // Remove texto antes do '{'
-    respostaTexto = respostaTexto.replace(/[^\}]*$/, '').trim(); // Remove texto depois do '}'
+    respostaTexto = respostaTexto.replace(/^[^\{]*/, '').trim();
+    respostaTexto = respostaTexto.replace(/[^\}]*$/, '').trim();
 
-    // Parsear o texto restante para JSON
     let resposta;
     try {
       resposta = JSON.parse(respostaTexto);
     } catch (error) {
-      // Em caso de erro na conversão do JSON
       return res.status(400).json({ error: 'Erro ao parsear o JSON.' });
     }
 
