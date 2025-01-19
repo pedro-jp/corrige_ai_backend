@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=production node dist/server.js",
-    "dev": "NODE_ENV=development nodemon --exec 'clear && ts-node-dev src/server.ts'",
+    "dev": "NODE_ENV=development ts-node src/server.ts",
     "build": "tsc "
   },
   "devDependencies": {

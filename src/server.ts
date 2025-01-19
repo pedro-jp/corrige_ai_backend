@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 3332;
 app.use(express.json());
 app.use(router);
 
+app.route('/').get((req, res) => {
+  res.send('Hello World!');
+});
+
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}!`);
 });
