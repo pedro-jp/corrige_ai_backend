@@ -5,9 +5,9 @@
   "author": "pedro-jp",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=production node api/index.js",
+    "start": "NODE_ENV=production node dist/server.js",
     "dev": "NODE_ENV=development ts-node src/server.ts",
-    "build": "tsc  "
+    "build": "netlify deploy --prod"
   },
   "devDependencies": {
     "@types/node": "^22.10.7",

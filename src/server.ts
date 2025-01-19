@@ -1,6 +1,7 @@
 import express from 'express';
+import serverlessHttp from 'serverless-http';
 import dotenv from 'dotenv';
-import { router } from './routes';
+import { router } from './routes/routes';
 import cors from 'cors';
 
 export const app = express();
@@ -12,8 +13,6 @@ router.get('/', (req, res) => {
   res.json({ message: 'Hello World!' });
 });
 app.use(express.json());
-app.use(router);
+app.use('/.netlify/functions/api', router);
 
-app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}!`);
-});
+export const handler = serverlessHttp(app);
