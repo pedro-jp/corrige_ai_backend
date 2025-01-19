@@ -1,0 +1,27 @@
+{
+  "name": "corrige_ai",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "pedro-jp",
+  "license": "MIT",
+  "scripts": {
+    "start": "NODE_ENV=production node dist/server.js",
+    "dev": "NODE_ENV=development nodemon --exec 'clear && ts-node-dev src/server.ts'",
+    "build": "tsc "
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2"
+  }
+}
